@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=genivi.webex.com
+Icon=/usr/share/icons/nuoveXT2/72x72/apps/firefox-icon.png
+Exec=/usr/bin/firefox https://genivi.webex.com
+
