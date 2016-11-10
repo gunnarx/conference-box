@@ -13,8 +13,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-   # Set defaults, or as defined by environment variables
-
+   # Set defaults, if not defined by environment variables
    hostname = ENV['VMNAME']
    hostname = 'webex-linux-box' if hostname == nil
 
@@ -44,16 +43,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        echo "Starting provisioning. "
        echo "***************************************************************"'
 
-      # Run final installation script, if it exists
+      # Run final installation script, if it exists, and fix ownership of
+      # root-created files.
       config.vm.provision :shell, inline:
       " [ -f /vagrant/script.sh ] && /vagrant/script.sh 
         echo #{vmname} >/vagrant/VMNAME
-      "
-      # Created/copied files, are owned by root after provisioning - fix that
-      config.vm.provision :shell, inline:
-      " sudo chown -R vagrant:vagrant /home/vagrant
-      # Remove other users than vagrant -- makes things less confusing
-      sudo deluser ubuntu   # Might fail but that is ok
-      true                  # Make sure Vagrant does not stop on error
+        sudo chown -R vagrant:vagrant /home/vagrant
       "
 end
