@@ -35,7 +35,14 @@ rm -rf /tmp/* /var/{cache,tmp}/* /var/lib/apt/lists/*
 # Firefox plugin configuration
 sudo update-alternatives --set mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/IcedTeaPlugin.so
 
-# Skip login screen altogether, and get rid of unused user
-echo -e "[base]\nautologin=$USER" >> /etc/lxdm/default.conf
-deluser ubuntu
+# The blacklist gets rid of all useless login names from LXDM login screen
+# However, then autologin is added anyway, so the login screen is skipped.
+# BUT autologin failed to work, maybe the whitelist is required for this.
+# Since this configuration works I'll just leave it as-is, even the blacklist
+# is kept for possible future use.
+echo "[base]" >>$LXDE_CONF
+echo "white=$USER" >>$LXDE_CONF
+echo "black=syslog usbmux messagebus pollinate colord statd puppet" >> $LXDE_CONF
+echo -e "[base]\nautologin=$USER" >> $LXDE_CONF
+deluser ubuntu puppet || true
 
