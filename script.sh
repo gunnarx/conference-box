@@ -3,8 +3,9 @@
 USER=vagrant
 HOMEDIR=/home/$USER
 LXDE_CONF=/etc/lxdm/default.conf
+PROJECTDIR=/vagrant
 
-source_dir="/vagrant/files"
+source_dir="$PROJECTDIR/files"
 
 [ -d "$source_dir" ]
 
