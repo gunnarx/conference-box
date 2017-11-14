@@ -1,5 +1,6 @@
 # (C) 2014-2016 Gunnar Andersson
-# License: MPLv2
+# License: Your choice of CC-BY-4.0, MPLv2, GPLv2/3+
+# License text for MPLv2 provided in root directory.
 
 # -*- mode: ruby -*-
 # vim: set ft=ruby sw=4 ts=4 tw=0 et:

@@ -1,5 +1,9 @@
 #!/bin/bash -x
 
+# (C) 2016 Gunnar Andersson
+# License: Your choice of CC-BY-4.0, MPLv2, GPLv2/3+
+# License text for MPLv2 provided in root directory.
+
 USER=vagrant
 HOMEDIR=/home/$USER
 LXDE_CONF=/etc/lxdm/default.conf
