@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -x
 
 USER=vagrant
 HOMEDIR=/home/$USER
