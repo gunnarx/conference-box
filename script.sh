@@ -9,7 +9,7 @@ source_dir="$PROJECTDIR/files"
 
 [ -d "$source_dir" ]
 
-sudo apt-get install -y lxde --fix-broken
+sudo apt-get install -y lxde --fix-broken --fix-missing
 
 sudo apt-get install -y firefox              \
                         openjdk-7-jre        \
