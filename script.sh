@@ -9,12 +9,22 @@ source_dir="$PROJECTDIR/files"
 
 [ -d "$source_dir" ]
 
-sudo apt-get install -y firefox
-sudo apt-get install -y openjdk-7-jre
-sudo apt-get install -y libxmu6
-sudo apt-get install -y icedtea-7-plugin 
-
 sudo apt-get install -y lxde --fix-broken
+
+sudo apt-get install -y firefox              \
+                        openjdk-7-jre        \
+                        libxmu6              \
+                        icedtea-7-plugin     \
+                        libpangox-1.0-dev    \
+                        libxmu-dev           \
+                        libegl1-mesa-dev     \
+                        libgtk2.0-dev        \
+                        libpng-dev           \
+                        libasound2-dev       \
+                        linux-sound-base     \
+                        libart-2.0-dev       \
+                        libxtst-dev
+
 # These dependencies always fail installation and the error sticks around - I don't think we need them
 sudo apt-get remove -y dictionaries-common miscfiles
 
