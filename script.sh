@@ -9,6 +9,7 @@ source_dir="$PROJECTDIR/files"
 
 [ -d "$source_dir" ]
 
+sudo apt-get update
 sudo apt-get install -y lxde --fix-broken --fix-missing
 
 sudo apt-get install -y firefox              \
@@ -55,5 +56,6 @@ echo "[base]" >>$LXDE_CONF
 echo "white=$USER" >>$LXDE_CONF
 echo "black=syslog usbmux messagebus pollinate colord statd puppet" >> $LXDE_CONF
 echo -e "[base]\nautologin=$USER" >> $LXDE_CONF
-deluser ubuntu puppet || true
+userdel ubuntu || true
+userdel puppet || true
 
