@@ -60,6 +60,12 @@ echo "[base]" >>$LXDE_CONF
 echo "white=$USER" >>$LXDE_CONF
 echo "black=syslog usbmux messagebus pollinate colord statd puppet" >> $LXDE_CONF
 echo -e "[base]\nautologin=$USER" >> $LXDE_CONF
-userdel ubuntu || true
+
+# Don't need these
 userdel puppet || true
+userdel ubuntu || true
+
+# This weirdness now cause issues with apt-get.  Remove those puppet lines
+sudo sed -i '/puppet/d' /var/lib/dpkg/statoverride
+
 
