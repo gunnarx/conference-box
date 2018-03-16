@@ -14,10 +14,13 @@ source_dir="$PROJECTDIR/files"
 [ -d "$source_dir" ]
 
 sudo apt-get update
+
 sudo apt-get install -y lxde --fix-broken --fix-missing
 
-sudo apt-get install -y firefox              \
-                        openjdk-7-jre        \
+sudo apt-get install -y firefox
+
+# Webex prerequisites
+sudo apt-get install -y openjdk-7-jre        \
                         libxmu6              \
                         icedtea-7-plugin     \
                         libpangox-1.0-dev    \
@@ -30,8 +33,25 @@ sudo apt-get install -y firefox              \
                         libart-2.0-dev       \
                         libxtst-dev
 
+
 # These dependencies always fail installation and the error sticks around - I don't think we need them
 sudo apt-get remove -y dictionaries-common miscfiles
+
+# Dependencies for zoom
+sudo apt-get install -y libxcb-image0  \
+                        libxcb-keysyms1 \
+                        libxcb-xtest0 \
+                        libxslt1.1
+
+# Get and install Zoom
+cd /tmp
+wget https://zoom.us/client/latest/zoom_i386.deb
+dpkg -i zoom_i386.deb
+rm zoom_i386.deb
+cd -
+
+# ... if any missed prereqs, this might fix it automatically
+sudo apt-get -f install
 
 # Copy files into home dir
 echo "Running: rsync -a $source_dir/ $HOMEDIR/"

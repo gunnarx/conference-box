@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Zoom
+Icon=/usr/share/pixmaps/application-x-zoom.png
+Exec=/usr/bin/zoom
+
