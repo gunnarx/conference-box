@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Terminal
+Icon=/usr/share/icons/hicolor/128x128/apps/lxterminal.png
+Exec=/usr/bin/lxterminal
+
