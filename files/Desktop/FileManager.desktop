@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=SharedFolder
+Exec=pcmanfm /home/vagrant/vmshare-webex
