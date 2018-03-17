@@ -39,6 +39,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize [ "modifyvm", :id, "--cpus", 2 ]
    end
 
+   # Folder shared with host
+
+   # Note that VirtualBox Guest Extensions must be installed.
+   # There is a vagrant plugin to automate this
+
+   # Although this is now set up only for Virtualbox, the following command
+   # is a more portable abstraction (Vagrant will choose appropriate shared
+   # folder setting depending on specified type).
+   # Alternatively something like:   ', type: "virtualbox"'   could be
+   # added to force type
+   config.vm.synced_folder "~/vmshare-webex", "/home/vagrant/vmshare-webex"
+
+
+   # PROVISIONING
+
    config.vm.provision :shell, inline:
       'echo "***************************************************************"
        echo "Starting provisioning. "
