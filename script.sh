@@ -15,8 +15,13 @@ source_dir="$PROJECTDIR/files"
 
 sudo apt-get update
 
-sudo apt-get install -y lxde --fix-broken --fix-missing
+# LXDE, but avoid the complaints from miscfiles & dictionaries - we don't need them
+sudo apt-get install -y  --fix-broken --fix-missing --no-install-recommends \
+                      lxde \
+                      miscfiles- \
+                      dictionaries-common- \
 
+# Browser
 sudo apt-get install -y firefox
 
 # Webex prerequisites
@@ -33,9 +38,6 @@ sudo apt-get install -y openjdk-7-jre        \
                         libart-2.0-dev       \
                         libxtst-dev
 
-
-# These dependencies always fail installation and the error sticks around - I don't think we need them
-sudo apt-get remove -y dictionaries-common miscfiles
 
 # Dependencies for zoom
 sudo apt-get install -y libxcb-image0  \
