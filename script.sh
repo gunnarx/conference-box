@@ -16,7 +16,7 @@ source_dir="$PROJECTDIR/files"
 sudo apt-get update
 
 # LXDE, but avoid the complaints from miscfiles & dictionaries - we don't need them
-sudo apt-get install -y  --fix-broken --fix-missing --no-install-recommends \
+sudo apt-get install -y  --fix-broken --fix-missing \
                       lxde \
                       miscfiles- \
                       dictionaries-common- \
