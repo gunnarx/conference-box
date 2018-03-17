@@ -18,6 +18,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    hostname = ENV['VMNAME']
    hostname = 'webex-linux-box' if hostname == nil
 
+   # Getting user real name from host, let's assume we want the same in guest
+   user = `whoami`
+   realname = `getent passwd vagrant`.split(/:/)[4]
+
    box = ENV['BOX']
    box = "trusty32" if box == nil
 
@@ -66,4 +70,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         echo #{vmname} >/vagrant/VMNAME
         sudo chown -R vagrant:vagrant /home/vagrant
       "
+
+   config.vm.provision :shell, inline:
+   "echo \"Setting your real name to #{realname} (copied from host user #{user})\"
+    sudo chfn -f \"#{realname}\" vagrant"
+
 end
