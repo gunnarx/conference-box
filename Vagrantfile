@@ -20,7 +20,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
    # Getting user real name from host, let's assume we want the same in guest
    user = `whoami`
-   realname = `getent passwd vagrant`.split(/:/)[4]
+   realname = `getent passwd user`.split(/:/)[4]
+   puts "Got real name: #{realname}"
 
    box = ENV['BOX']
    box = "trusty32" if box == nil
