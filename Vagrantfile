@@ -63,13 +63,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        echo "Starting provisioning. "
        echo "***************************************************************"'
 
-      # Run final installation script, if it exists, and fix ownership of
-      # root-created files.
-      config.vm.provision :shell, inline:
-      " [ -f /vagrant/script.sh ] && /vagrant/script.sh 
-        echo #{vmname} >/vagrant/VMNAME
-        sudo chown -R vagrant:vagrant /home/vagrant
-      "
+   # Run final installation script, if it exists, and fix ownership of
+   # root-created files.
+   config.vm.provision :shell, inline:
+   " [ -f /vagrant/script.sh ] && /vagrant/script.sh 
+      echo #{vmname} >/vagrant/VMNAME
+      sudo chown -R vagrant:vagrant /home/vagrant
+   "
 
    config.vm.provision :shell, inline:
    "echo \"Setting your real name to #{realname} (copied from host user #{user})\"
