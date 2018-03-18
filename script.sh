@@ -38,12 +38,18 @@ sudo apt-get install -y openjdk-7-jre        \
                         libart-2.0-dev       \
                         libxtst-dev
 
-
 # Dependencies for zoom
 sudo apt-get install -y libxcb-image0  \
                         libxcb-keysyms1 \
                         libxcb-xtest0 \
                         libxslt1.1
+
+# Guest OS extensions fix
+# Despite using a vagrant plugin to install guest OS support, it seems
+# this is needed to get everything, like display-resize, to work.
+
+sudo apt-get install -y virtualbox-guest-dkms
+sudo apt-get install -y virtualbox-guest-additions-iso # ubuntu only?
 
 # Get and install Zoom
 cd /tmp
