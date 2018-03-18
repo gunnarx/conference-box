@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
    # Set defaults, if not defined by environment variables
    hostname = ENV['VMNAME']
-   hostname = 'webex-linux-box' if hostname == nil
+   hostname = 'zoom-linux-box' if hostname == nil
 
    # Getting user real name from host, let's assume we want the same in guest
    user = `whoami`
@@ -54,7 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # folder setting depending on specified type).
    # Alternatively something like:   ', type: "virtualbox"'   could be
    # added to force type
-   config.vm.synced_folder "~/vmshare-webex", "/home/vagrant/vmshare-webex"
+   config.vm.synced_folder "~/vmshare-zoom", "/home/vagrant/vmshare-zoom"
 
 
    # PROVISIONING

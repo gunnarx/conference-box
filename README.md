@@ -1,32 +1,37 @@
-Simple Webex Linux box
-======================
+Simple Conferencing in sandboxed VM (Webex, Zoom, ...)
+======================================================
 
-This is nothing really special:
+This is nothing really special...
 
 Goal:
 -----
-- Provide a ready to run and isolated WebEx environment that can be run on Linux.
-- Install the software (Browser, Java & Plugin) to be able to run WebEx on Linux
-- Avoid the mess of mixing 32-bit versions of Java into your 64 bit system.
+- Provide a ready to run an isolated Zoom (or WebEx*) Conferencing environment that can be run on Linux.
+- Download and install the software to be able to run the software on Linux
 - Run X, not Wayland, to enable screen sharing (but keeping your host system safe, isolated from the VM)
+- NOTE: Master branch has been switched to Zoom only -- see below.
 
 How:
 -----
 - Using Vagrant to create a fresh virtual machine image
 - Base OS:  Ubuntu with a small(ish) desktop environment: LXDE
-- WebEx seems to require 32-bit Java versions.  To keep it simple, the base OS is therefore 32 bit.
-- Install Firefox + plugins
+- Uses 32-bit OS (legacy, because WebEx Java plugins required it before. This will likely change at some point because Zoom has a 64-bit native client)
+- Install Firefox + Zoom native client
+
+\*Branches (IMPORTANT):
+--------------------
+
+Master branch has now been switched over to install only Zoom, because we no longer use WebEx at GENIVI.  If you want to use WebEx - consider the webex+zoom branch -- however it should be considered unsuppported.
 
 Running:
 --------
 
 1. Install Vagrant & VirtualBox
 
-2. Clone project, cd webex-box and run:
+2. Clone project, cd to project dir and run:
 ```
 $ vagrant up --provision
 ```
-3. Open VirtualBox user interface and restart the VM
+3. Open VirtualBox user interface and **restart** the VM
 
 Tweaks:
 -------
@@ -34,6 +39,6 @@ Depending on your system resources you could tweak memory or number of CPUs for 
 
 TODO:
 -----
-- Provide a directory shared with the host, used for example to share some documents on screen. (You can still do this up manually in VirtualBox after the VM is created, and mount the disk inside the VM)
+- Automate the setup of shared folder, used for example to share some documents on screen. NOTE: You can still do this up manually in VirtualBox after the VM is created, and mount the disk inside the VM.
 
 

@@ -24,20 +24,6 @@ sudo apt-get install -y  --fix-broken --fix-missing \
 # Browser
 sudo apt-get install -y firefox
 
-# Webex prerequisites
-sudo apt-get install -y openjdk-7-jre        \
-                        libxmu6              \
-                        icedtea-7-plugin     \
-                        libpangox-1.0-dev    \
-                        libxmu-dev           \
-                        libegl1-mesa-dev     \
-                        libgtk2.0-dev        \
-                        libpng-dev           \
-                        libasound2-dev       \
-                        linux-sound-base     \
-                        libart-2.0-dev       \
-                        libxtst-dev
-
 # Dependencies for zoom
 sudo apt-get install -y libxcb-image0  \
                         libxcb-keysyms1 \
@@ -75,9 +61,6 @@ apt-get autoremove
 apt-get autoclean
 apt-get clean
 rm -rf /tmp/* /var/{cache,tmp}/* /var/lib/apt/lists/*
-
-# Firefox plugin configuration
-sudo update-alternatives --set mozilla-javaplugin.so /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/IcedTeaPlugin.so
 
 # The blacklist gets rid of all useless login names from LXDM login screen
 # However, then autologin is added anyway, so the login screen is skipped.
