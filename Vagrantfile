@@ -56,6 +56,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # added to force type
    config.vm.synced_folder "~/vmshare-webex", "/home/vagrant/vmshare-webex"
 
+   # Auto-mount it also inside VM:
+   config.vm.provision :shell, inline:
+      'echo "vmshare-webex /home/vagrant/vmshare-webex vboxsf defaults 0 0" >>/etc/fstab'
 
    # PROVISIONING
 
