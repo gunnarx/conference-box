@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Name=genivi.zoom.com
+Name=GENIVI Standard Locations
 Icon=/usr/share/icons/nuoveXT2/72x72/apps/firefox-icon.png
 Exec=/home/vagrant/bin/firefox_wrapper.sh
 
