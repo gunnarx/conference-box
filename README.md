@@ -34,6 +34,10 @@ $ vagrant up --provision
 3. Open the VirtualBox user interface, find the VM and **restart** the VM
 (Do a clean ACPI Shutdown, followed by Start.  Alternatively from command line: vagrant halt ; vagrant up)
 
+4. Optionally (manually) set up a folder that is shared with the host, for being able to show documents.  I use ~/vmshare-webex, now ~/vmshare-zoom, as default.
+
+5. Optionally use **apt-get** to install any software you might lack - e.g. LibreOffice if you're sharing documents.
+
 Troubleshooting:
 ----------------
 
