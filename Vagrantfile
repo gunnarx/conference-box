@@ -56,6 +56,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # added to force type
    config.vm.synced_folder "~/vmshare-zoom", "/home/vagrant/vmshare-zoom"
 
+   # Auto-mount it also inside VM:
+   config.vm.provision :shell, inline:
+      'echo "vmshare-zoom /home/vagrant/vmshare-zoom vboxsf defaults 0 0" >>/etc/fstab'
 
    # PROVISIONING
 
