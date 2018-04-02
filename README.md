@@ -12,7 +12,7 @@ Goal:
 
 How:
 -----
-- Using Vagrant to create a fresh virtual machine image
+- Using Vagrant to create a fresh [VirtualBox (https://www.virtualbox.org/) virtual machine image
 - Base OS:  Ubuntu with a small(ish) desktop environment: LXDE
 - Uses 32-bit OS (legacy, because WebEx Java plugins required it before. This will likely change at some point because Zoom has a 64-bit native client)
 - Install Firefox + Zoom native client
@@ -31,7 +31,19 @@ Running:
 ```
 $ vagrant up --provision
 ```
-3. Open VirtualBox user interface and **restart** the VM
+3. Open the VirtualBox user interface, find the VM and **restart** the VM
+(Do a clean ACPI Shutdown, followed by Start.  Alternatively from command line: vagrant halt ; vagrant up)
+
+Troubleshooting:
+----------------
+
+If you have issues with any of this:
+ - Shared folder won't work
+ - Guest screen won't resize when you resize the VirtualBox window (or set it to full screen)
+
+... then you likely have mismatched guest additions installed.
+
+VirtualBox support is beyond this project - please look elsewhere.  It's always a challenge to get the guest OS set up correctly because you host system changes, VirtualBox version changes, but the guest OS might not. In particular the guest additions need to match the VirtualBox version. Since this is based on a fixed base box, there is no way to guarantee that, but installing [vagrant guest additions plugin](https://github.com/dotless-de/vagrant-vbguest) BEFORE running vagrant up / provisioning, might help.
 
 Tweaks:
 -------
