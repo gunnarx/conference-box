@@ -20,7 +20,7 @@ How:
 \*Branches (IMPORTANT):
 --------------------
 
-Master branch has now been switched over to install only Zoom, because we no longer use WebEx at GENIVI.  If you want to use WebEx - consider the webex+zoom branch -- however it should be considered unsuppported.
+Master branch has now been switched over to install only Zoom, because we no longer use WebEx at GENIVI.  If you want to use WebEx - consider the [webex+zoom branch](https://github.com/gunnarx/conference-box/tree/webex+zoom) -- however it should be considered unsuppported.
 
 Running:
 --------
@@ -34,7 +34,7 @@ $ vagrant up --provision
 3. Open the VirtualBox user interface, find the VM and **restart** the VM
 (Do a clean ACPI Shutdown, followed by Start.  Alternatively from command line: vagrant halt ; vagrant up)
 
-4. Check that a folder that is shared with the host works.  It seems to be automatic now - if not, try manually adding it.   ~/vmshare-zoom (previously vmshare-webex) is the default path on both host and guest.
+4. Check that the folder that is shared with the host is working.  It seems to be automatic now - if not, try manually adding it.   ~/vmshare-zoom (previously vmshare-webex) is the default path on both host and guest.
 
 5. Optionally use **apt-get** to install any software you might lack - e.g. LibreOffice if you're sharing documents.
 
@@ -56,7 +56,7 @@ Depending on your system resources you could tweak memory or number of CPUs for 
 
 Bugs:
 -----
-* At the moment, clipboard is not working for me (it should, due to guest additions being installed, but who knows)
+* At the moment, shared clipboard is not working for me (it should, due to guest additions being installed, but who knows)
 
 (!) This is not a complete list - also refer to [GitHub Issues](https://github.com/gunnarx/conference-box/issues).
 
