@@ -34,7 +34,7 @@ $ vagrant up --provision
 3. Open the VirtualBox user interface, find the VM and **restart** the VM
 (Do a clean ACPI Shutdown, followed by Start.  Alternatively from command line: vagrant halt ; vagrant up)
 
-4. Optionally (manually) set up a folder that is shared with the host, for being able to show documents.  I use ~/vmshare-webex, now ~/vmshare-zoom, as default.
+4. Check that a folder that is shared with the host works.  It seems to be automatic now - if not, try manually adding it.   ~/vmshare-zoom (previously vmshare-webex) is the default path on both host and guest.
 
 5. Optionally use **apt-get** to install any software you might lack - e.g. LibreOffice if you're sharing documents.
 
@@ -43,6 +43,7 @@ Troubleshooting:
 
 If you have issues with any of this:
  - Shared folder won't work
+ - Shared clipboard doesn't work (also see Bugs section)
  - Guest screen won't resize when you resize the VirtualBox window (or set it to full screen)
 
 ... then you likely have mismatched guest additions installed.
@@ -53,8 +54,9 @@ Tweaks:
 -------
 Depending on your system resources you could tweak memory or number of CPUs for better perfomance - either in the Vagrantfile before building, or later on in the VirtualBox user interface.
 
-TODO:
+Bugs:
 -----
-- Automate the setup of shared folder, used for example to share some documents on screen. NOTE: You can still do this up manually in VirtualBox after the VM is created, and mount the disk inside the VM.
+* At the moment, clipboard is not working for me (it should, due to guest additions being installed, but who knows)
 
+(!) This is not a complete list - also refer to [GitHub Issues](https://github.com/gunnarx/conference-box/issues).
 
