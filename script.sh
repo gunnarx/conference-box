@@ -28,6 +28,7 @@ sudo apt-get install -y firefox
 sudo apt-get install -y libxcb-image0  \
                         libxcb-keysyms1 \
                         libxcb-xtest0 \
+                        libxcb-randr0-dev \
                         libxslt1.1
 
 # Guest OS extensions fix
