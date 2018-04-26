@@ -38,6 +38,11 @@ sudo apt-get install -y libxcb-image0  \
 sudo apt-get install -y virtualbox-guest-dkms
 sudo apt-get install -y virtualbox-guest-additions-iso # ubuntu only?
 
+# Other userful stuff
+sudo apt-get install -y evince # PDF viewer
+sudo apt-get install -y libreoffice
+sudo apt-get install -y vim-gtk
+
 # Get and install Zoom
 cd /tmp
 wget https://zoom.us/client/latest/zoom_i386.deb
